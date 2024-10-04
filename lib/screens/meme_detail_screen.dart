@@ -21,7 +21,7 @@ class _MemeDetailScreenState extends State<MemeDetailScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Storage Permission"),
+          title: const Text("Storage Permission"),
           content: Text("This app needs access to your storage to save edited images. Please allow access."),
           actions: [
             TextButton(
@@ -49,7 +49,7 @@ class _MemeDetailScreenState extends State<MemeDetailScreen> {
     if (status.isGranted) {
 
     } else if (status.isDenied) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Storage permission is required to save images.'),
       ));
     } else if (status.isPermanentlyDenied) {
@@ -118,26 +118,39 @@ class _MemeDetailScreenState extends State<MemeDetailScreen> {
       appBar: AppBar(
         title: Text(widget.name),
       ),
-      body: Column(
-        children: [
-          if (_editedImage == null)
-            Image.network(widget.imageUrl)
-          else
-            Image.file(_editedImage!),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: _cropImage,
-                child: Text('Edit Image'),
-              ),
-              ElevatedButton(
-                onPressed: _saveImage,
-                child: Text('Save Image'),
-              ),
-            ],
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            if (_editedImage == null)
+              Image.network(widget.imageUrl)
+            else
+              Image.file(_editedImage!),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 55,
+                  width: MediaQuery.of(context).size.width/2.5,
+                  child: ElevatedButton(style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,foregroundColor:Colors.white
+                  ),
+                    onPressed: _cropImage,
+                    child: const Text('Edit Image'),
+                  ),
+                ),
+                SizedBox(height: 55,width: MediaQuery.of(context).size.width/2.5,
+                  child: ElevatedButton(style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,foregroundColor:Colors.white
+                  ),
+                    onPressed: _saveImage,
+                    child: Text('Save Image'),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
