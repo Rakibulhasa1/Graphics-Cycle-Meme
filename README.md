@@ -15,7 +15,7 @@ For help getting started with Flutter development, view the [online documentatio
 
 ### Additional Resources
 
-- [Resource 1](https://drive.google.com/file/d/12cbr0_mjZ277jGUUQE5cXQo9P5FXBeRU/view?usp=drivesdk)
+- (https://drive.google.com/file/d/12cbr0_mjZ277jGUUQE5cXQo9P5FXBeRU/view?usp=drivesdk)
 - [Resource 2](https://drive.google.com/file/d/12RqT3dBZwNbebzDNHve8VCC1P1b6AAU9/view?usp=drivesdk)
 - [Resource 3](https://drive.google.com/file/d/12P2SkEZbGNzdZh7i9sggTLLR_UuiLbRT/view?usp=drivesdk)
 - [Resource 4](https://drive.google.com/file/d/12NoH8TZlANqS425C7oHA_SfAOJWnQwnd/view?usp=drivesdk)
